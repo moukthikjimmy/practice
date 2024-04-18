@@ -1,0 +1,18 @@
+<html>
+    <head>All the products available</head>
+    <title>Products</title>
+    <body>
+        <a href="{%url 'add_products' %}"><button>Add</button></a>
+        <ol>
+            {%for product in products%}
+            <li>
+                <b>Name: </b>{{product.name}}<br>
+                <b>Price: </b>{{product.price}}<br>
+                <b>Launch Date: </b>{{product.launch_date}}<br>
+                <a href="{%url 'edit_product' product.id %}"><button>Edit</button></a>
+                <a href="{%url 'delete_product' product.id %}"><button>Delete</button></a>
+            </li>
+            {% endfor %}
+        </ol>
+    </body>
+</html>
